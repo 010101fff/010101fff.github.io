@@ -1,5 +1,32 @@
-<script>
-	location.href="http://192.168.72.6/exp.html";
-
-</script>
-<a href="http://192.168.72.6/exp.html">aaaaaaaaa</a>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>表单提交示例</title>
+  <script>
+    function handleSubmit() {
+      // 获取表单输入值
+      var jsCode = document.getElementById('jsCode').value;
+      
+      // 执行 JavaScript 代码
+      try {
+        eval(jsCode);
+        console.log('JavaScript 代码执行成功');
+      } catch (error) {
+        console.error('JavaScript 代码执行出错:', error);
+      }
+      
+      // 阻止表单提交
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <h1>表单提交示例</h1>
+  <form onsubmit="return handleSubmit()">
+    <label for="jsCode">JavaScript 代码:</label>
+    <input type="text" id="jsCode" name="jsCode" required>
+    <br>
+    <input type="submit" value="执行">
+  </form>
+</body>
+</html>
