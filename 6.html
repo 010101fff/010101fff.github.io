@@ -22,9 +22,10 @@
 </head>
 <body>
   <h1>表单提交示例</h1>
+  <div id="view"></div>
   <form onsubmit="return handleSubmit()">
     <label for="jsCode">JavaScript 代码:</label>
-    <input type="text" id="jsCode" name="jsCode" required>
+    <textarea type="text" id="jsCode" ></textarea>
     <br>
     <input type="submit" value="执行">
   </form>
